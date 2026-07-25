@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Desk Pad — To-Do List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Mono:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="desk">
+  <div class="notepad">
+    <div class="rings" aria-hidden="true"></div>
+
+    <header class="notepad-header">
+      <h1 class="title">The&nbsp;List</h1>
+      <p class="tagline" id="dateLine"></p>
+    </header>
+
+    <form class="task-form" id="taskForm" novalidate>
+      <input
+        type="text"
+        id="taskInput"
+        class="task-input"
+        placeholder="jot something down…"
+        autocomplete="off"
+        maxlength="120"
+        aria-label="New task"
+      >
+      <button type="submit" class="add-btn">+ Add</button>
+    </form>
+    <p class="form-hint" id="formHint" role="alert" aria-live="polite"></p>
+
+    <nav class="filter-tabs" id="filterTabs" aria-label="Filter tasks">
+      <button class="tab active" data-filter="all" type="button">All</button>
+      <button class="tab" data-filter="active" type="button">Active</button>
+      <button class="tab" data-filter="completed" type="button">Completed</button>
+    </nav>
+
+    <div class="list-wrap">
+      <ul class="task-list" id="taskList"></ul>
+      <div class="empty-state" id="emptyState" hidden>
+        <p class="empty-line" id="emptyLine">Nothing here yet.</p>
+        <p class="empty-sub" id="emptySub">Type above and press Enter to start your list.</p>
+      </div>
+    </div>
+
+    <footer class="notepad-footer">
+      <p class="count" id="taskCount">0 tasks left</p>
+      <button class="clear-btn" id="clearCompleted" type="button">clear completed</button>
+    </footer>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
